@@ -52,9 +52,11 @@ svg.bi-arrow-down {
 main {
     margin-left: 100px;
 }
-.anner{
+
+.anner {
     display: none;
 }
+
 //Estilos Propios
 //Inicio
 .h1Inicio {
@@ -287,10 +289,11 @@ a {
 }
 
 //trabajo
-.flex{
+.flex {
     display: flex;
     justify-content: space-around;
 }
+
 .bYN {
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
@@ -298,33 +301,39 @@ a {
     -o-filter: grayscale(100%);
     filter: grayscale(100%);
     transition: all 0.5 ease-in-out;
-    &:hover{
+
+    &:hover {
         filter: grayscale(0%);
     }
 }
 
 
 //responsive
-@media (max-width:900px) and (min-width: 280px){
-    .links{
+@media (max-width:900px) and (min-width: 280px) {
+    .links {
         margin-bottom: 20px;
     }
-    main{
+
+    main {
         margin-left: 28px;
         margin-top: 0px;
     }
-    .noResponsive{
+
+    .noResponsive {
         display: none;
     }
-    .anner{
+
+    .anner {
         display: block;
     }
+
     .h1Inicio {
 
         margin-top: 10px;
         width: 0px;
         font-weight: 700;
     }
+
     .hamburger {
         position: fixed;
         left: 0%;
@@ -337,18 +346,18 @@ a {
         cursor: pointer;
         user-select: none;
         z-index: 1;
-      
+
         &__icon {
-          color: $turquesa!important;
-          background-color: $fondo;
-          width: auto;
-          padding-left: 5px;
-          border-radius: 5px;
+            color: $turquesa !important;
+            background-color: $fondo;
+            width: auto;
+            padding-left: 5px;
+            border-radius: 5px;
         }
-      
-      }
-      
-      .sidebar {
+
+    }
+
+    .sidebar {
         height: 100vh;
         width: 320px;
         background: $fondo;
@@ -361,123 +370,149 @@ a {
         transform: translatex(-100%);
         transition: transform 0.4s ease-in-out;
         z-index: 3;
-      
+
         &__close {
-          position: absolute;
-          top: 5%;
-          right: 142px;
-          background: #fff;
-          height: 60px;
-          width: 60px;
-          border-radius:50%;
-          box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.03);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          transform: translatex(-100%);
-          cursor: pointer;
-          transition: transform 0.4s ease-in-out 0.2s;
-      
-          &::before,
-          &::after {
-            content: "";
-            height: 2px;
-            background: #898989;
-            width: 24px;
-            display: block;
             position: absolute;
-          }
-      
-          &::after {
-            transform: rotate(90deg);
-          }
+            top: 5%;
+            right: 142px;
+            background: #fff;
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.03);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translatex(-100%);
+            cursor: pointer;
+            transition: transform 0.4s ease-in-out 0.2s;
+
+            &::before,
+            &::after {
+                content: "";
+                height: 2px;
+                background: #898989;
+                width: 24px;
+                display: block;
+                position: absolute;
+            }
+
+            &::after {
+                transform: rotate(90deg);
+            }
         }
-      
+
         &__menu {
-          //it's means sidebar__menu
-          display: flex;
-          flex-direction: column;
-          flex: 1;
-          justify-content: space-around;
-          font-size: 20px;
-          margin-top: 80px;
-          margin-bottom: 80px;
-          color: $blanco;
-      
-          a {
-            color: currentcolor;
-            text-decoration: none;
-            transform: translatex(-80%);
-            transition: transform 0.4s ease-in-out;
-      
-            &::before {
-              content: "";
-              height: 2px;
-              background: #898989;
-              width: 120px;
-              position: absolute;
-              bottom: -2px;
-              left: 0;
-              transform: translatex(-50%);
-              opacity: 0;
-              transition: transform 0.4s ease-in-out, opacity 0.4s linear;
+            //it's means sidebar__menu
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: space-around;
+            font-size: 20px;
+            margin-top: 80px;
+            margin-bottom: 80px;
+            color: $blanco;
+
+            a {
+                color: currentcolor;
+                text-decoration: none;
+                transform: translatex(-80%);
+                transition: transform 0.4s ease-in-out;
+
+                &::before {
+                    content: "";
+                    height: 2px;
+                    background: #898989;
+                    width: 120px;
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    transform: translatex(-50%);
+                    opacity: 0;
+                    transition: transform 0.4s ease-in-out, opacity 0.4s linear;
+                }
+
+                &:hover {
+                    &::before {
+                        transform: translatex(0);
+                        opacity: 1;
+                    }
+                }
+
+                @for $i from 1 through 5 {
+                    &:nth-child(#{$i}) {
+                        transition-delay: $i * 0.05s;
+                    }
+                }
             }
-      
-            &:hover {
-              &::before {
-                transform: translatex(0);
-                opacity: 1;
-              }
-            }
-      
-            @for $i from 1 through 5 {
-              &:nth-child(#{$i}) {
-                transition-delay: $i * 0.05s;
-              }
-            }
-          }
         }
-      
+
         &__social {
-          display: flex;
-          list-style: none;
-          padding: 0;
-          width: 50px;
-          justify-content: space-between;
-      
-      
-      
-          a,
-          svg {
-            display: inline-block;
-            height: 18px;
-            width: 18px;
-            
-            font-size: 10px;
-          }
+            display: flex;
+            list-style: none;
+            padding: 0;
+            width: 50px;
+            justify-content: space-between;
+
+
+
+            a,
+            svg {
+                display: inline-block;
+                height: 18px;
+                width: 18px;
+
+                font-size: 10px;
+            }
         }
-      }
-      
-      .menu-control {
+    }
+
+    .menu-control {
         display: none;
-      
+
         &:checked {
-          &+.sidebar {
-            transform: translatex(0);
-          }
-      
-          &+.sidebar .sidebar__close {
-            transform: translatex(0) rotate(45deg);
-          }
-      
-          &+.sidebar .sidebar__menu a {
-            transform: translatex(0);
-          }
+            &+.sidebar {
+                transform: translatex(0);
+            }
+
+            &+.sidebar .sidebar__close {
+                transform: translatex(0) rotate(45deg);
+            }
+
+            &+.sidebar .sidebar__menu a {
+                transform: translatex(0);
+            }
         }
-      }
-      
+    }
+
 
 }
+
+footer {
+    height: 10vh;
+    div {
+        display: flex;
+        justify-content: center;
+        section {
+            display: flex;
+            flex-flow: row nowrap;
+            a{
+                border: 1px solid $turquesa;
+                padding: 10px;
+                border-radius: 200px;
+                margin-right: 20px;
+                &:hover{
+                    color: $blanco;
+                    background-color: $turquesa;
+                }
+            }
+        }
+    }
+    .text-center{
+        margin-top: 20px;
+    }
+}
+
 //animación
 @keyframes flecha {
     0% {

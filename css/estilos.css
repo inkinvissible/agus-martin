@@ -351,6 +351,25 @@ a {
     .menu-control:checked + .sidebar .sidebar__menu a {
       transform: translatex(0); } }
 
+footer {
+  height: 10vh; }
+  footer div {
+    display: flex;
+    justify-content: center; }
+    footer div section {
+      display: flex;
+      flex-flow: row nowrap; }
+      footer div section a {
+        border: 1px solid #00FBF2;
+        padding: 10px;
+        border-radius: 200px;
+        margin-right: 20px; }
+        footer div section a:hover {
+          color: #ffffff;
+          background-color: #00FBF2; }
+  footer .text-center {
+    margin-top: 20px; }
+
 @keyframes flecha {
   0% {
     transform: translateY(0px);
