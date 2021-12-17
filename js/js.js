@@ -14,3 +14,6 @@ const navbarlinksActive = () => {
 }
 window.addEventListener('load', navbarlinksActive)
 onscroll(document, navbarlinksActive)
+
+let ver =document.getElementById(#h2Head);
+
